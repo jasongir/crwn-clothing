@@ -1,3 +1,20 @@
 To make a react app that's also a PWA:
 npx create-react-app crwn-clothing --template cra-template-pwa
 
+
+if you need to upate a project to the latest version:
+- clone the repo from github
+git clone ~~~ url ~~~
+rm -rf yarn.lock # or rm -rf pakage-lock.json
+npm update -D # update existing dependencies
+npm audit fix # to fix/update packages
+
+npm install
+
+npm audit fix
+
+# then push up latest version:
+git add -a
+git commit -m "update packages to latest versions, remove + fix vulnerabilities"
+git push
+
