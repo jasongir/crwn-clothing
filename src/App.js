@@ -4,6 +4,7 @@ import "./App.css";
 import { Switch, Route, Link } from "react-router-dom";
 
 import HomePage from "./pages/homepage/homepage.component";
+import ShopPage from "./pages/shop/shop.component";
 
 const HatsPage = (props) => {
 	console.log(props);
@@ -43,9 +44,11 @@ function App() {
 			<Switch>
 				{/* chooses the first route that matches */}
 				<Route exact path="/" component={HomePage} />
-				<Route exact path="/topics" component={TopicsPage} />
+				<Route exact path="/shop" component={ShopPage} />
+
+				{/* <Route exact path="/topics" component={TopicsPage} />
 				<Route exact path="/topics/:topicId" component={TopicsDetail} />
-				<Route exact path="/shop/hats" component={HatsPage} />
+   <Route exact path="/shop/hats" component={HatsPage} />*/}
 			</Switch>
 		</div>
 	);
