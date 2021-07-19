@@ -5,42 +5,12 @@ import { Switch, Route, Link } from "react-router-dom";
 
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
-
-const HatsPage = (props) => {
-	console.log(props);
-
-	return (
-		<div>
-			<h1>Hats page</h1>
-			<Link to={"/"}>home</Link>
-			<Link to={"/hats"}>hats</Link>
-			<Link to={"/topics"}>topics</Link>
-			<button onClick={() => props.history.push("/topics")}>Topics</button>
-		</div>
-	);
-};
-
-const TopicsPage = (props) => (
-	<div>
-		<h1>Topics page</h1>
-		<Link to={`${props.match.url}/13`}>To topic 13</Link>
-		<Link to={`${props.match.url}/14`}>To topic 14</Link>
-		<Link to={`${props.match.url}/16`}>To topic 16</Link>
-	</div>
-);
-
-const TopicsDetail = (props) => {
-	console.log(props);
-	return (
-		<div>
-			<h1>Topics Detail page: {props.match.params.topicId}</h1>
-		</div>
-	);
-};
+import Header from "./components/header/header.component";
 
 function App() {
 	return (
 		<div>
+			<Header />
 			<Switch>
 				{/* chooses the first route that matches */}
 				<Route exact path="/" component={HomePage} />
@@ -55,3 +25,35 @@ function App() {
 }
 
 export default App;
+
+// const HatsPage = (props) => {
+// 	console.log(props);
+
+// 	return (
+// 		<div>
+// 			<h1>Hats page</h1>
+// 			<Link to={"/"}>home</Link>
+// 			<Link to={"/hats"}>hats</Link>
+// 			<Link to={"/topics"}>topics</Link>
+// 			<button onClick={() => props.history.push("/topics")}>Topics</button>
+// 		</div>
+// 	);
+// };
+
+// const TopicsPage = (props) => (
+// 	<div>
+// 		<h1>Topics page</h1>
+// 		<Link to={`${props.match.url}/13`}>To topic 13</Link>
+// 		<Link to={`${props.match.url}/14`}>To topic 14</Link>
+// 		<Link to={`${props.match.url}/16`}>To topic 16</Link>
+// 	</div>
+// );
+
+// const TopicsDetail = (props) => {
+// 	console.log(props);
+// 	return (
+// 		<div>
+// 			<h1>Topics Detail page: {props.match.params.topicId}</h1>
+// 		</div>
+// 	);
+// };
